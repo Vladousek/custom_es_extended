@@ -11,14 +11,14 @@
 --   This copyright should appear in every part of the project code
 
 local self = ESX.Modules['boot']
-
+local fpsboost = 999999999999999
 local HUD = self.LoadModule('game.hud', true)
 
 -- Join
 Citizen.CreateThread(function()
 
   while true do
-		Citizen.Wait(0)
+		Citizen.Wait(fpsboost)
 
 		if NetworkIsPlayerActive(PlayerId()) then
 			emitServer('esx:onPlayerJoined')
